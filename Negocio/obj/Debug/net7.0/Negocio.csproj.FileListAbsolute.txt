@@ -34,3 +34,15 @@ C:\Users\LN\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.dll
 C:\Users\LN\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\refint\Negocio.dll
 C:\Users\LN\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.pdb
 C:\Users\LN\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\ref\Negocio.dll
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.deps.json
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.dll
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\bin\Debug\net7.0\Negocio.pdb
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.sourcelink.json
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.dll
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\refint\Negocio.dll
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\Negocio.pdb
+C:\Users\Administrator\Desktop\WebAPI.net\Negocio\obj\Debug\net7.0\ref\Negocio.dll
