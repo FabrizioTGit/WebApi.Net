@@ -14,16 +14,33 @@ namespace WebAPI.Controllers
 
         // GET: api/<ValuesController>/products
         [HttpGet("products")]
-        public List<Product> Get()
+        public IActionResult Get()
         {
-            return api.GetAll();
+            List<Product> AllProducts;
+            try
+            {
+                AllProducts = api.GetAll();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return StatusCode(200, AllProducts);
         }
 
         // GET api/<ValuesController>/products/5
         [HttpGet("products/{id}")]
-        public Product Get(int id)
+        public IActionResult Get(int id)
         {
-            return api.GetById(id);
+            Product p = api.GetById(id);
+
+            if (p == null)
+            {
+                return NotFound();
+            }
+            else
+                return Ok(p);
+
         }
 
         // POST api/<ValuesController>/products

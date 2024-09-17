@@ -8,16 +8,23 @@ namespace Negocio
     public class ProductsAPI
     {
         public List<Product> GetAll()
-        {
+        {            
             return Datos.listaProductos.OrderBy(item => item.Id).ToList(); 
         }
         public Product GetById(int id)
         {
-            return Datos.listaProductos.Where(item => item.Id == id).First();
+            bool exist = Datos.listaProductos.Any(p => p.Id == id);
+            if (exist)
+            {
+                return Datos.listaProductos.Where(item => item.Id == id).First();
+            }
+            else
+                return null;
+            
         }
         public void Update(Product producto){ }
         public int Delete(int id) 
-        {           
+        {             
            return Datos.listaProductos.RemoveAll(item => item.Id == id);
         }
         public Product Put(Product prod)
