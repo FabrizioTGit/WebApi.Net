@@ -10,7 +10,7 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        ProductsAPI api = new ProductsAPI();
+        ProductsAPI apiMetodos = new ProductsAPI();
 
         // GET: api/<ValuesController>/products
         [HttpGet("products")]
@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
             List<Product> AllProducts;
             try
             {
-                AllProducts = api.GetAll();
+                AllProducts = apiMetodos.GetAll();
             }
             catch (Exception ex)
             {
@@ -32,36 +32,64 @@ namespace WebAPI.Controllers
         [HttpGet("products/{id}")]
         public IActionResult Get(int id)
         {
-            Product p = api.GetById(id);
+            Product product = apiMetodos.GetById(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(product);
+            }
+        }
+
+        // POST api/<ValuesController>/products
+        [HttpPost("products")]
+        public IActionResult Post([FromBody] Product product)
+        {
+            Product p;
+            try
+            {
+                p = apiMetodos.Post(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return StatusCode(201, p);
+
+        }
+
+        // PUT api/<ValuesController>/5
+        [HttpPut]
+        public IActionResult Put([FromBody] Product product)
+        {
+            Product p = apiMetodos.Put(product);
 
             if (p == null)
             {
                 return NotFound();
             }
             else
-                return Ok(p);
-
-        }
-
-        // POST api/<ValuesController>/products
-        [HttpPost("products")]
-        public Product Post([FromBody] Product producto)
-        {
-            return api.Post(producto);
-        }
-
-        // PUT api/<ValuesController>/5
-        [HttpPut]
-        public Product Put([FromBody] Product product)
-        {
-            return api.Put(product);
+            {
+                return StatusCode(200, p);
+            }
         }
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            api.Delete(id);
+            if (apiMetodos.Delete(id) == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return StatusCode(200);
+            }
+
         }
     }
 }

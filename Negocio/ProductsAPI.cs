@@ -9,35 +9,78 @@ namespace Negocio
     {
         public List<Product> GetAll()
         {            
-            return Datos.listaProductos.OrderBy(item => item.Id).ToList(); 
+            return Datos.listProducts.OrderBy(item => item.Id).ToList(); 
         }
         public Product GetById(int id)
-        {
-            bool exist = Datos.listaProductos.Any(p => p.Id == id);
-            if (exist)
+        {            
+            if (Datos.Existe(id))
             {
-                return Datos.listaProductos.Where(item => item.Id == id).First();
+                return Datos.listProducts.Where(item => item.Id == id).First();
             }
             else
+            {
                 return null;
-            
+            }           
         }
         public void Update(Product producto){ }
         public int Delete(int id) 
-        {             
-           return Datos.listaProductos.RemoveAll(item => item.Id == id);
+        {            
+            if (Datos.Existe(id))
+            {
+                return Datos.listProducts.RemoveAll(item => item.Id == id);
+            }
+            else
+            {
+                return 0;
+            }                
         }
         public Product Put(Product prod)
         {            
-            var product = Datos.listaProductos.Where(item => item.Id == prod.Id).First();
-            Datos.listaProductos.Remove(product);            
-            Datos.Agregar(prod);
-            return product;            
+            if (Datos.Existe(prod.Id))
+            {
+                if (prod == null)
+                {
+                    return null;
+                }
+
+                if (prod.Price < 0)
+                {
+                    return null;
+                }
+
+                var product = Datos.listProducts.Where(item => item.Id == prod.Id).First();
+                Datos.listProducts.Remove(product);            
+                Datos.Agregar(prod);
+                return product;
+            }
+            else
+                return null;
+           
         }
-        public Product Post(Product producto)
+        public Product Post(Product product)
         {
-            Datos.Agregar(producto);
-            return producto;            
+            if (product == null)
+            {
+                throw new ArgumentNullException(nameof(product), "El producto no puede ser nulo");
+            }
+                        
+            if (product.Id <= 0)
+            {
+                throw new ArgumentException("El ID del producto debe ser mayor que 0");
+            }
+
+            if (Datos.Existe(product.Id))
+            {
+                throw new InvalidOperationException($"Ya existe un producto con el ID {product.Id}");
+            }
+
+            if (product.Price <= 0)
+            {
+                throw new ArgumentException("El precio del producto no puede ser negativo");
+            }
+                        
+            Datos.Agregar(product);
+            return product;
         }
     }
 }

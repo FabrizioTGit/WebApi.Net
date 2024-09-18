@@ -175,3 +175,39 @@ C:\Users\LN\Desktop\Nueva carpeta\WebApi.Net\WebAPI\obj\Debug\net7.0\scopedcss\b
 C:\Users\LN\Desktop\Nueva carpeta\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.csproj.CopyComplete
 C:\Users\LN\Desktop\Nueva carpeta\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.genruntimeconfig.cache
 C:\Users\LN\Desktop\Nueva carpeta\WebApi.Net\WebAPI\obj\Debug\net7.0\ref\WebAPI.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\appsettings.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\WebAPI.exe
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\WebAPI.deps.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\WebAPI.runtimeconfig.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\WebAPI.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\WebAPI.pdb
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Negocio.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\bin\Debug\net7.0\Negocio.pdb
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.AssemblyInfoInputs.cache
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.AssemblyInfo.cs
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.sourcelink.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets\msbuild.build.WebAPI.props
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebAPI.props
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebAPI.props
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\scopedcss\bundle\WebAPI.styles.css
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.csproj.Up2Date
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\refint\WebAPI.dll
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.pdb
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\WebAPI.genruntimeconfig.cache
+C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\WebAPI\obj\Debug\net7.0\ref\WebAPI.dll
