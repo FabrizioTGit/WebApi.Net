@@ -481,9 +481,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\FabrizioTGit\\WebApi.Net\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\FabrizioTGit\\WebApi.Net\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\FabrizioTGit\\WebApi.Net\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\FabrizioTGit\\WebApi.Net\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\FabrizioTGit\\WebApi.Net\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
@@ -503,8 +503,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Source\\Repos\\FabrizioTGit\\WebApi.Net\\Negocio\\Negocio.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\FabrizioTGit\\WebApi.Net\\Negocio\\Negocio.csproj"
+            "C:\\Users\\Administrator\\source\\repos\\FabrizioTGit\\WebApi.Net\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\FabrizioTGit\\WebApi.Net\\Negocio\\Negocio.csproj"
             }
           }
         }

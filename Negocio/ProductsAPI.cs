@@ -58,27 +58,7 @@ namespace Negocio
            
         }
         public Product Post(Product product)
-        {
-            if (product == null)
-            {
-                throw new ArgumentNullException(nameof(product), "El producto no puede ser nulo");
-            }
-                        
-            if (product.Id <= 0)
-            {
-                throw new ArgumentException("El ID del producto debe ser mayor que 0");
-            }
-
-            if (Datos.Existe(product.Id))
-            {
-                throw new InvalidOperationException($"Ya existe un producto con el ID {product.Id}");
-            }
-
-            if (product.Price <= 0)
-            {
-                throw new ArgumentException("El precio del producto no puede ser negativo");
-            }
-                        
+        {                        
             Datos.Agregar(product);
             return product;
         }
