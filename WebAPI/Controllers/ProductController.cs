@@ -14,18 +14,23 @@ namespace WebAPI.Controllers
 
         // GET: api/<ValuesController>/products
         [HttpGet("products")]
-        public IActionResult Get()
+        //public IActionResult Get()
+        //{
+        //    List<Product> AllProducts;
+        //    try
+        //    {
+        //        AllProducts = apiMetodos.GetAll();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, ex.Message);
+        //    }
+        //    return StatusCode(200, AllProducts);
+        //}
+        public List<Product> GetProducts()
         {
-            List<Product> AllProducts;
-            try
-            {
-                AllProducts = apiMetodos.GetAll();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-            return StatusCode(200, AllProducts);
+            ProductsAPI productsAPI = new ProductsAPI();
+            return productsAPI.GetAll();
         }
 
         // GET api/<ValuesController>/products/5
@@ -81,6 +86,7 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            //revisar
             if (apiMetodos.Delete(id) == 0)
             {
                 return NotFound();

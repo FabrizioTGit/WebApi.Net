@@ -1,4 +1,6 @@
-﻿using Negocio.Models;
+﻿using Dapper;
+using MySql.Data.MySqlClient;
+using Negocio.Models;
 using System.ComponentModel;
 using System.Text.Json.Nodes;
 
@@ -7,60 +9,76 @@ namespace Negocio
 {
     public class ProductsAPI
     {
+        private const string connStr = "Server=sql10.freemysqlhosting.net;Database=sql10741376;Uid=sql10741376;Pwd=vqRiz5UenI;";
+
         public List<Product> GetAll()
-        {            
-            return Datos.listProducts.OrderBy(item => item.Id).ToList(); 
+        {
+            List<Product> listaProducts = new List<Product>();
+            using (MySqlConnection myConn = new MySqlConnection(connStr))
+            {
+                myConn.Open();
+
+                string sql = "SELECT * FROM Products";
+
+                listaProducts = myConn.Query<Product>(sql).ToList();
+            }
+            return listaProducts;
         }
         public Product GetById(int id)
-        {            
-            if (Datos.Existe(id))
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                return Datos.listProducts.Where(item => item.Id == id).First();
+                conn.Open();
+
+                string sql = "SELECT * FROM Products WHERE Id = @Id";
+
+                return conn.QueryFirstOrDefault<Product>(sql, new { Id = id });
             }
-            else
+        }        
+        public int Delete(int id)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                return null;
-            }           
-        }
-        public void Update(Product producto){ }
-        public int Delete(int id) 
-        {            
-            if (Datos.Existe(id))
-            {
-                return Datos.listProducts.RemoveAll(item => item.Id == id);
+                conn.Open();
+
+                string sql = "DELETE FROM Products WHERE Id = @Id";
+
+                int rowsAffected = conn.Execute(sql, new { Id = id });
+
+                return rowsAffected;
             }
-            else
-            {
-                return 0;
-            }                
         }
         public Product Put(Product prod)
-        {            
-            if (Datos.Existe(prod.Id))
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                if (prod == null)
+                conn.Open();
+
+                string sql = "UPDATE Products SET Title = @Title, Description = @Description, Category = @Category, Price = @Price WHERE Id = @Id";
+                int rowsAffected = conn.Execute(sql, new { Title = prod.Title, Description = prod.Description, Category = prod.Category, Price = prod.Price, Id = prod.Id });
+
+
+                if (rowsAffected > 0)
+                {
+                    return prod; 
+                }
+                else
                 {
                     return null;
                 }
-
-                if (prod.Price < 0)
-                {
-                    return null;
-                }
-
-                var product = Datos.listProducts.Where(item => item.Id == prod.Id).First();
-                Datos.listProducts.Remove(product);            
-                Datos.Agregar(prod);
-                return product;
             }
-            else
-                return null;
-           
         }
-        public Product Post(Product product)
-        {                        
-            Datos.Agregar(product);
-            return product;
+        public Product Post(Product prod)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+
+                string sql = "INSERT INTO Products (Title, Description, Category, Price) VALUES (@Title, @Description, @Category, @Price)";
+                conn.Execute(sql, new { Title = prod.Title, Description = prod.Description, Category = prod.Category, Price = prod.Price });
+                
+                return prod;
+            }
         }
     }
 }

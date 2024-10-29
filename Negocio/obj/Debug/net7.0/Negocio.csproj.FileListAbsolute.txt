@@ -70,3 +70,4 @@ C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\Negocio\obj\Debug\ne
 C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\Negocio\obj\Debug\net7.0\refint\Negocio.dll
 C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\Negocio\obj\Debug\net7.0\Negocio.pdb
 C:\Users\Administrator\Source\Repos\FabrizioTGit\WebApi.Net\Negocio\obj\Debug\net7.0\ref\Negocio.dll
+C:\Users\Administrator\Desktop\WebApi.Net\Negocio\obj\Debug\net7.0\Negocio.csproj.AssemblyReference.cache
