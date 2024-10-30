@@ -24,6 +24,19 @@ namespace Negocio
             }
             return listaProducts;
         }
+        public List<string> GetAllCategories()
+        {
+            List<string> listaCategories = new List<string>();
+            using (MySqlConnection myConn = new MySqlConnection(connStr))
+            {
+                myConn.Open();
+
+                string sql = "SELECT Category FROM Categories";
+
+                listaCategories = myConn.Query<string>(sql).ToList();
+            }
+            return listaCategories;
+        }
         public Product GetById(int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -80,5 +93,6 @@ namespace Negocio
                 return prod;
             }
         }
+
     }
 }

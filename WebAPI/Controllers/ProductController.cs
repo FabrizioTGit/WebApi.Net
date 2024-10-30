@@ -14,38 +14,35 @@ namespace WebAPI.Controllers
 
         // GET: api/<ValuesController>/products
         [HttpGet("products")]
-        //public IActionResult Get()
-        //{
-        //    List<Product> AllProducts;
-        //    try
-        //    {
-        //        AllProducts = apiMetodos.GetAll();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, ex.Message);
-        //    }
-        //    return StatusCode(200, AllProducts);
-        //}
         public List<Product> GetProducts()
         {
             ProductsAPI productsAPI = new ProductsAPI();
             return productsAPI.GetAll();
+        }
+        // GET: api/<ValuesController>/categories
+        [HttpGet("categories")]
+        public List<string> GetCategories()
+        {
+            ProductsAPI productsAPI = new ProductsAPI();
+            return productsAPI.GetAllCategories();
         }
 
         // GET api/<ValuesController>/products/5
         [HttpGet("products/{id}")]
         public IActionResult Get(int id)
         {
-            Product product = apiMetodos.GetById(id);
-
-            if (product == null)
+            try
             {
-                return NotFound();
-            }
-            else
-            {
+                Product product = apiMetodos.GetById(id);
+                if (product == null)
+                {
+                    throw new Exception("No se encontró el id");
+                }
                 return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new {ex.Message});
             }
         }
 
