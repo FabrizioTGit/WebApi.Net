@@ -9,7 +9,7 @@ namespace Negocio
 {
     public class ProductsAPI
     {
-        private const string connStr = "Server=sql10.freemysqlhosting.net;Database=sql10741376;Uid=sql10741376;Pwd=vqRiz5UenI;";
+        private const string connStr = "Server=db4free.net;Database=lasnieves110424;Uid=lasnieves110424;Pwd=lasnieves110424;";
 
         public List<Product> GetAll()
         {
@@ -47,7 +47,7 @@ namespace Negocio
 
                 return conn.QueryFirstOrDefault<Product>(sql, new { Id = id });
             }
-        }        
+        }
         public int Delete(int id)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -55,12 +55,12 @@ namespace Negocio
                 conn.Open();
 
                 string sql = "DELETE FROM Products WHERE Id = @Id";
-
                 int rowsAffected = conn.Execute(sql, new { Id = id });
 
-                return rowsAffected;
+                return rowsAffected; 
             }
         }
+
         public Product Put(Product prod)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))

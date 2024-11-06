@@ -14,17 +14,44 @@ namespace WebAPI.Controllers
 
         // GET: api/<ValuesController>/products
         [HttpGet("products")]
-        public List<Product> GetProducts()
+        public IActionResult GetProducts()
         {
-            ProductsAPI productsAPI = new ProductsAPI();
-            return productsAPI.GetAll();
+            try
+            {                
+                List<Product> products = apiMetodos.GetAll();
+
+                if (products == null || !products.Any())
+                {
+                    return BadRequest(new { Message = "No se encontraron productos." });
+                }
+
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { ex.Message });
+            }
         }
+
         // GET: api/<ValuesController>/categories
         [HttpGet("categories")]
-        public List<string> GetCategories()
+        public IActionResult GetCategories()
         {
-            ProductsAPI productsAPI = new ProductsAPI();
-            return productsAPI.GetAllCategories();
+            try
+            {
+                List<string> Categories = apiMetodos.GetAllCategories();
+
+                if (Categories == null || !Categories.Any())
+                {
+                    return BadRequest(new { Message = "No se encontraron categorias."});
+                }
+
+                return Ok(Categories);
+            }
+            catch (Exception ex) 
+            {
+                return StatusCode(500, new { ex.Message });
+            }           
         }
 
         // GET api/<ValuesController>/products/5
@@ -36,7 +63,7 @@ namespace WebAPI.Controllers
                 Product product = apiMetodos.GetById(id);
                 if (product == null)
                 {
-                    throw new Exception("No se encontró el id");
+                    throw new Exception("No se encontro el id");
                 }
                 return Ok(product);
             }
@@ -46,53 +73,67 @@ namespace WebAPI.Controllers
             }
         }
 
-        // POST api/<ValuesController>/products
+        // POST api/<ValuesController>/products        
         [HttpPost("products")]
         public IActionResult Post([FromBody] Product product)
         {
-            Product p;
             try
             {
-                p = apiMetodos.Post(product);
+                Product createdProduct = apiMetodos.Post(product);
+                if (createdProduct == null)
+                {
+                    throw new Exception("Error al crear el producto.");
+                }
+                return StatusCode(201, createdProduct);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, new { ex.Message });
             }
-            return StatusCode(201, p);
-
         }
+
 
         // PUT api/<ValuesController>/5
         [HttpPut]
         public IActionResult Put([FromBody] Product product)
         {
-            Product p = apiMetodos.Put(product);
+            try
+            {
+                Product p = apiMetodos.Put(product);
 
-            if (p == null)
-            {
-                return NotFound();
+                if (p == null)
+                {
+                    return BadRequest(new { Message = "No se encontro el producto para actualizar." });
+                }
+
+                return Ok(p);
             }
-            else
+            catch (Exception ex)
             {
-                return StatusCode(200, p);
+                return StatusCode(500, new { ex.Message });
             }
         }
+
 
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            //revisar
-            if (apiMetodos.Delete(id) == 0)
+            try
             {
-                return NotFound();
-            }
-            else
-            {
-                return StatusCode(200);
-            }
+                int rowsAffected = apiMetodos.Delete(id);
 
+                if (rowsAffected == 0)
+                {
+                    return BadRequest(new { Message = "No se encontro el producto para eliminar." });
+                }
+
+                return Ok(new { Message = "Producto eliminado exitosamente." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { ex.Message });
+            }
         }
     }
 }

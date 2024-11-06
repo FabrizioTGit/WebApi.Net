@@ -369,7 +369,10 @@
           "MySql.Data": "9.1.0"
         },
         "runtime": {
-          "Negocio.dll": {}
+          "Negocio.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
