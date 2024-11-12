@@ -68,7 +68,7 @@ namespace Negocio
                 conn.Open();
 
                 string sql = "UPDATE Products SET Title = @Title, Description = @Description, Category = @Category, Price = @Price WHERE Id = @Id";
-                int rowsAffected = conn.Execute(sql, new { Title = prod.Title, Description = prod.Description, Category = prod.Category, Price = prod.Price, Id = prod.Id });
+                int rowsAffected = conn.Execute(sql, prod);
 
 
                 if (rowsAffected > 0)
@@ -88,7 +88,7 @@ namespace Negocio
                 conn.Open();
 
                 string sql = "INSERT INTO Products (Title, Description, Category, Price) VALUES (@Title, @Description, @Category, @Price)";
-                conn.Execute(sql, new { Title = prod.Title, Description = prod.Description, Category = prod.Category, Price = prod.Price });
+                conn.Execute(sql, prod);
                 
                 return prod;
             }
